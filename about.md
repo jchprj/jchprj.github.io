@@ -3,16 +3,10 @@ layout: page
 title: About
 permalink: /about/
 ---
+This is my new site. I don't use wordpress any more. Now it is powered by github pages which is much lighter especially for technologies. 
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+In my daily life I encounter many technique problems, here is a place for any kind of things.
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+I'm also continually improving my English and my vocabularies. I love it.
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
-
-
-[jekyll-organization]: https://github.com/jekyll
+And more, build some labs.
