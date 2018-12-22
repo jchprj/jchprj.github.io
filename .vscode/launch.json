@@ -1,0 +1,19 @@
+{
+    "version": "0.1.0",
+    "configurations": [
+        {
+            "name": "Launch localhost",
+            "type": "chrome",
+            "request": "launch",
+            "url": "http://localhost:4000/test/nav/index.html",
+            "webRoot": "${workspaceFolder}"
+        },
+        {
+            "name": "Launch nav",
+            "type": "chrome",
+            "request": "launch",
+            "url": "http://localhost:8080/test/nav/index.html",
+            "webRoot": "${workspaceFolder}"
+        },
+    ]
+}

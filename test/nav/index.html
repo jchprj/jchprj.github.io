@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Hello World</title>
+</head>
+<style>
+:focus {
+    outline: 5px solid darkblue;
+}
+
+</style>
+<script src="spatial_navigation.js"></script>
+<script src="pixi.js"></script>
+
+<body>
+    <script type="text/javascript">
+        var KEYMAPPING = {
+            '37': 'left',
+            '38': 'up',
+            '39': 'right',
+            '40': 'down'
+        };
+        window.addEventListener('load', function() {
+            // Initialize
+            SpatialNavigation.init();
+
+            // Define navigable elements (anchors and elements with "focusable" class).
+            SpatialNavigation.add({
+                selector: 'button'
+            });
+        });
+        window.addEventListener('keydown', function(e) {
+            var direction = KEYMAPPING[e.keyCode];
+            if (!direction) {
+                return;
+            }
+            if (app.renderer.plugins.accessibility.isActive) {
+                return;
+            }
+            app.renderer.plugins.accessibility.activate();
+        });
+
+
+        let type = "WebGL"
+        if (!PIXI.utils.isWebGLSupported()) {
+            type = "canvas"
+        }
+
+        PIXI.utils.sayHello(type)
+
+        //Create a Pixi Application
+        let app = new PIXI.Application({
+            width: 500, // default: 800
+            height: 360, // default: 600
+            antialias: true, // default: false
+            transparent: false, // default: false
+            resolution: 1 // default: 1
+        });
+        app.renderer.backgroundColor = 0xAAAAAA;
+
+
+        app.renderer.on('postrender', function() {
+            SpatialNavigation.makeFocusable();
+        }, this);
+
+        //Add the canvas that Pixi automatically created for you to the HTML document
+        document.body.appendChild(app.view);
+
+        function setup() {
+            for (var i = 0; i < 10; i++) {
+                var xx = i % 6;
+                var yy = Math.floor(i / 6);
+                newRect(50 + xx * 60, 50 + yy * 60, 50, 50);
+            }
+            newRect(290, 110, 110, 50);
+            newRect(50, 170, 50, 50);
+            newRect(50, 230, 50, 50);
+            newRect(110, 170, 110, 110);
+            newRect(230, 170, 110, 50);
+            newRect(230, 230, 50, 50);
+            newRect(290, 230, 50, 50);
+            newRect(350, 170, 50, 110);
+        }
+
+        function newRect(x, y, w, h) {
+            var graphics = new PIXI.Graphics();
+            graphics.position.set(x, y);
+            graphics.beginFill(0xA0A0A0);
+            graphics.lineStyle(5, 0xFFFFFF);
+            graphics.drawRect(0, 0, w, h);
+            // graphics.tabIndex = 2;
+            graphics.accessible = true;
+            graphics.interactive = true;
+            app.stage.addChild(graphics);
+        }
+
+        setup();
+
+        window.addEventListener('mousemove', function() {
+            var x = window.event.clientX - 8;
+            var y = window.event.clientY - 8;
+            document.getElementById("info").innerHTML = x + ", " + y;
+        });
+    </script>
+    <div id="info"></div>
+</body>
+
+</html>
