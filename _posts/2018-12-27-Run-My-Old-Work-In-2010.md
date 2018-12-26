@@ -19,7 +19,7 @@ So in order to run the swf, I have to change the Flex UI components into pure Ac
 
 (The newly modified project is here: [Newly Repository](https://github.com/jchprj/flashtests/tree/master/swf/findpath))
 
-Fortunately, it's very easy to compile the new project. No need to install any Flash related IDE. Just VS code and a plugin [ActionScript & MXML in Visual Studio Code](https://as3mxml.com/). Followed the guide, I used Apache Flex SDK to compile the project and got swf file.
+Fortunately, it's very easy to compile the new project. No need to install any Flash related IDE. Just VS Code and an extension [ActionScript & MXML in Visual Studio Code](https://as3mxml.com/). Followed the guide, I used [Apache Flex](http://flex.apache.org/) SDK to compile the project and got swf file.
 
 There is also new way to compile some Flex based AS project to JS release. Or just a way to create project using mxml and AS. Using [Apache Royale](https://royale.apache.org/). But it can not use pure Flash classes. This is another topic if I will use it. 
 
