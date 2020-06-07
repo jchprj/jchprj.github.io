@@ -30,16 +30,7 @@
             var cuserlink = "https://www.github.com/" + data[i].user.login;
             var clink = "https://github.com/{{ include.github_account }}/issues/{{page.comment_issue_id}}#issuecomment-" + data[i].url.substring(data[i].url.lastIndexOf("/")+1);
             var cbody = data[i].body_html;
-            {% if include.require_cookie_consent == 'true' %}
-                if(readCookie('cookie-notice-dismissed')=='true') {
-                    var cavatarlink = data[i].user.avatar_url;
-                } else {
-                    var cavatarlink = '/img/emptyavatar.png';
-                    cbody = cbody.replace(/<img src=/g,"<img data-src=");
-                }
-            {% else %}
-                var cavatarlink = data[i].user.avatar_url;
-            {% endif %}
+            var cavatarlink = data[i].user.avatar_url;
             var cdate = data[i].created_at;
             document.getElementById("comments").innerHTML = document.getElementById("comments").innerHTML + "<div class='comment'><div class='commentgravatar'>" + '<img src="' + cavatarlink + '" alt="' + cuser + '">' + "</div><div class='commentheader'><a class='commentuser' href=\""+ cuserlink + "\">" + cuser + "</a> commented <a class='commentdate' href=\"" + clink + "\">on " + cdate.substring(0, 10) + "</a></div><div class='commentbody'>" + cbody + "</div></div>";
             $('img[data-src]').replaceWith( "[Image blocked] " );
@@ -49,12 +40,7 @@
     if(data) {
         loadComments(JSON.parse(data));
     } else {
-        {% if include.require_cookie_consent == 'true' %}
-            if(readCookie('cookie-notice-dismissed')=='true') reloadComments();
-            else document.getElementById("comments").innerHTML = "<h3>Comments</h3><p>You can <a href='https://github.com/{{ include.github_account }}/issues/{{page.comment_issue_id}}' target='_blank'>view the comments</a> on GitHub (approve third party scripts to view them inline).</p>";
-        {% else %}
-            reloadComments();
-        {% endif %}
+        reloadComments();
     }
 </script>
 <style>
