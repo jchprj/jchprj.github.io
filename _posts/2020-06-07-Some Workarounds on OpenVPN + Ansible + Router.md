@@ -2,10 +2,11 @@
 layout: post
 title: Some Workarounds on OpenVPN + Ansible + Router
 date: 2020-06-07 15:23
-category: 
+categories: OpenVPN Ansible 
 author: 
 tags: []
-summary: 
+summary: I want to automate OpenVPN setup using Ansible Roles. This post includes some failure experiences, it's not directly about success, just want to log them. My target server is an EC2 instance under an AWS free account.
+comment_issue_id: 1
 ---
 
 I want to automate OpenVPN setup using Ansible Roles. This post includes some failure experiences, it's not directly about success, just want to log them. My target server is an EC2 instance under an AWS free account.
