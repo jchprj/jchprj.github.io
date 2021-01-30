@@ -2,11 +2,20 @@
 
 [Jekyll](https://jekyllrb.com/) based and hosted by [GitHub Pages](https://pages.github.com/).
 
+Refer Jekyll official website to install Jekyll locally for testing.
 ## Functionalities
 
-### Comments
+## Install
 
-References
+```
+bundle install
+```
+## Run
+
+```
+bundle exec jekyll serve
+```
+# References
 
 * [jekyll - Adding comments in blog posts on github-pages - Stack Overflow](https://stackoverflow.com/questions/59096243/adding-comments-in-blog-posts-on-github-pages)
 * [GDPR compliant comments | Jekyll Codex](https://jekyllcodex.org/blog/gdpr-compliant-comment/)
