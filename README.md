@@ -5,6 +5,9 @@
 Refer Jekyll official website to install Jekyll locally for testing.
 ## Functionalities
 
+Theme: [jekyll/minima: Minima is a one-size-fits-all Jekyll theme for writers.](https://github.com/jekyll/minima) with dark skin
+
+Comment through GitHub issues
 ## Install
 
 ```
