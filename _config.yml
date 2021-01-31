@@ -14,21 +14,39 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: chenjue.name
-email: jchprj@gmail.com
+author:
+  name: Jue Chen
+  email: jchprj@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   My new site started, new language, new platform, new technologies!
 baseurl: "" # the subpath of your site, e.g. /blog
 url: https://chenjue.name # the base hostname & protocol for your site, e.g. http://example.com
 enforce_ssl: https://chenjue.name
-twitter_username: 
-github_username:  jchprj
 
 # Build settings
 markdown: kramdown
 theme: minima
 plugins:
   - jekyll-feed
-
+minima:
+  skin: dark
+  date_format: "%b %-d, %Y"
+  social_links:
+    github: jchprj
+    twitter: false
+    stackoverflow: false
+    dribbble: false
+    facebook: false
+    flickr: false
+    instagram: false
+    linkedin: false
+    pinterest: jchprj
+    telegram: false
+    microdotblog: false
+    keybase: false
+    mastodon:
+     - username: jchprj
+       instance: qoto.org
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
