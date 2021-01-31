@@ -10,8 +10,8 @@ source "https://rubygems.org"
 # Happy Jekylling!
 gem "jekyll", "~> 4.2.0"
 
-# This is the default theme for new Jekyll sites. You may change this to anything you like.
-gem "minima", "~> 2.5.1"
+# Before minima 3.0 is released, use GitHub repository directly to adopt dark skin according to: https://blog.slowb.ro/dark-theme-for-minima-jekyll/
+gem "minima", git: "https://github.com/jekyll/minima"
 
 # If you have any plugins, put them here!
 group :jekyll_plugins do
